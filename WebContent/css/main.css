@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+body {
+	font-family: 'Oswald', sans-serif;
+}
+
+.p-informacao {
+	font-size: 15pt;
+}
+
+.display-3 {
+	font-size: 40pt;
+}
+
+.h2-equipes {
+	padding: 20px;
+}
+
+.form-group {
+	padding: 1.5rem;
+	margin-right: 0;
+	margin-left: 0;
+	border-width: .2rem;
+	position: relative;
+	margin: 1rem 500px 0;
+	border: solid green;
+	clear: both;
+	content: "";
+	display: block;
+}
+
+.h1-login {
+	text-align: center;
+	padding: 20px;
+	background-color: green;
+	color: #ffffff;
+}
+
+#button-login {
+	padding: 7px;
+	margin: 10px;
+	text-align: center;
+	float: none;
+	margin-left: 40px;
+}
+
+.form-check-label {
+	margin-left: 20px;
+}
+
+.form-check-input {
+	margin-left: 4px;
+}
+
+.body-login {
+	background-image: url(imagens/FOTO.jpg);
+}
+
+.form-login {
+	padding-top: 20px;
+}
+
+.label-senha {
+	margin: 70px;
+}
+
+.container-categorias {
+	border: green;
+}
