@@ -17,15 +17,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.usjt.ads.pi.model.entity.Campeonato;
 import br.usjt.ads.pi.model.entity.Categoria;
-import br.usjt.ads.pi.model.service.AuthentificationService;
+import br.usjt.ads.pi.model.service.UserService;
 import br.usjt.ads.pi.model.service.CampeonatoService;
 import br.usjt.ads.pi.model.service.CategoriaService;
 import br.usjt.ads.pi.model.service.RegulamentoService;
 
 @RestController
 public class ManterCampeonatoControllerRest {
-	@Autowired
-	private AuthentificationService authService;
 	@Autowired
 	private CampeonatoService campeonatoService;
 	@Autowired

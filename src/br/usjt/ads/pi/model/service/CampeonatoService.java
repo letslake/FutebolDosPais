@@ -18,12 +18,22 @@ public class CampeonatoService {
 		return campeonatoDAO.cadastrarCampeonato(campeonato);
 	}
 
+	public void atualizarCampeonato(Campeonato campeonato) throws IOException {
+		campeonatoDAO.atualizarCampeonato(campeonato);
+		return;
+	}
+
 	public ArrayList<Campeonato> listarCampeonatos() throws IOException {
 		return campeonatoDAO.listarCampeonatos();
 	}
 
 	public Campeonato buscarCampeonato(int id) throws IOException {
 		return campeonatoDAO.buscarCampeonato(id);
-	
+
+	}
+
+	public void excluirCampeonato(int id) throws IOException {
+		campeonatoDAO.excluirCampeonato(id);
+		return;
 	}
 }

@@ -136,4 +136,35 @@ public class CampeonatoDAO {
 
 		return campeonato;
 	}
+
+	public void atualizarCampeonato(Campeonato campeonato) throws IOException {
+		String sql = "update campeonato id_categoria = ?, id_regulamento = ?, nome = ? where id = ?";
+
+		try (PreparedStatement stm = conn.prepareStatement(sql)) {
+			stm.setString(1, campeonato.getNome());
+			stm.setInt(2, campeonato.getCategoria().getId());
+			stm.setInt(3, campeonato.getRegulamento().getId());
+
+			stm.setInt(4, campeonato.getId());
+
+			stm.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new IOException(e);
+		}
+	}
+
+	public void excluirCampeonato(int id) throws IOException {
+		String sql = "delete from campeonato where id = ? ";
+
+		try (PreparedStatement stm = conn.prepareStatement(sql)) {
+			stm.setInt(1, id);
+
+			stm.execute();
+		} catch (SQLException e) {
+			e.printStackTrace();
+			throw new IOException(e);
+		}
+	}
+
 }

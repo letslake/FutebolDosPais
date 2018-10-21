@@ -1,29 +1,31 @@
 package br.usjt.ads.pi.model.entity;
 
+import javax.persistence.Entity;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
-public class Administrador {
+
+@Entity
+public class Usuario {
 	private int id;
 	@NotNull
-	@Size(min=5, max=50)
+	@Size(min = 5, max = 50)
 	private String nome;
 	@NotNull
-	@Size(min=5, max=50)
+	@Size(min = 5, max = 50)
 	private String email;
 	@NotNull
-	@Size(min=5, max=50)
+	@Size(min = 5, max = 50)
 	private String senha;
 	@NotNull
-	@Size(min=5, max=50)
+	@Size(min = 5, max = 50)
 	private String username;
-	
-	public Administrador() {
-		
-		
+
+	public Usuario() {
+
 	}
-	
-	public Administrador(int id, String nome, String email, String senha, String username) {
+
+	public Usuario(int id, String nome, String email, String senha, String username) {
 		this.id = id;
 		this.nome = nome;
 		this.email = email;
@@ -38,7 +40,6 @@ public class Administrador {
 	public void setId(int id) {
 		this.id = id;
 	}
-
 
 	public String getNome() {
 		return nome;
@@ -74,11 +75,8 @@ public class Administrador {
 
 	@Override
 	public String toString() {
-		return "Administrador [id=" + id  + ", nome=" + nome + ", email=" + email
-				+ ", senha=" + senha + ", username=" + username + "]";
+		return "Administrador [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", username="
+				+ username + "]";
 	}
-	
-	
-	
-	
+
 }

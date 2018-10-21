@@ -53,8 +53,7 @@ public class RegulamentoDAO {
 			stm.execute();
 
 			String query = "select LAST_INSERT_ID()";
-			try (PreparedStatement stm1 = conn.prepareStatement(query)) {
-				ResultSet rs = stm1.executeQuery();
+			try (PreparedStatement stm1 = conn.prepareStatement(query); ResultSet rs = stm1.executeQuery();) {
 
 				if (rs.next()) {
 					id = rs.getInt(1);

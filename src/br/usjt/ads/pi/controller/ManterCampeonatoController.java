@@ -11,10 +11,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import br.usjt.ads.pi.model.entity.Administrador;
+import br.usjt.ads.pi.model.entity.Usuario;
 import br.usjt.ads.pi.model.entity.Campeonato;
 import br.usjt.ads.pi.model.entity.Categoria;
-import br.usjt.ads.pi.model.service.AuthentificationService;
+import br.usjt.ads.pi.model.service.UserService;
 import br.usjt.ads.pi.model.service.CampeonatoService;
 import br.usjt.ads.pi.model.service.CategoriaService;
 import br.usjt.ads.pi.model.service.RegulamentoService;
@@ -22,7 +22,7 @@ import br.usjt.ads.pi.model.service.RegulamentoService;
 @Controller
 public class ManterCampeonatoController {
 	@Autowired
-	private AuthentificationService authService;
+	private UserService authService;
 	@Autowired
 	private CampeonatoService campeonatoService;
 	@Autowired
@@ -31,7 +31,7 @@ public class ManterCampeonatoController {
 	private CategoriaService categoriaService;
 
 	public ManterCampeonatoController() {
-		authService = new AuthentificationService();
+		authService = new UserService();
 	}
 
 	@RequestMapping("/")
@@ -54,7 +54,7 @@ public class ManterCampeonatoController {
 		System.out.println(username);
 		System.out.println(senha);
 		try {
-			Administrador adm = authService.buscarAdministrador(username);
+			Usuario adm = authService.buscarUsuario(username);
 			System.out.println(adm);
 			if (adm != null) {
 				if (senha.equals(adm.getSenha())) {
