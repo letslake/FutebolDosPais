@@ -1,10 +1,21 @@
 package br.usjt.ads.pi.model.entity;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
 public class Administrador {
 	private int id;
+	@NotNull
+	@Size(min=5, max=50)
 	private String nome;
+	@NotNull
+	@Size(min=5, max=50)
 	private String email;
+	@NotNull
+	@Size(min=5, max=50)
 	private String senha;
+	@NotNull
+	@Size(min=5, max=50)
 	private String username;
 	
 	public Administrador() {

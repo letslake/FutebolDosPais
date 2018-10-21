@@ -8,19 +8,18 @@
 	<c:import url="navbar.jsp" />
 
 	<h1 class="h1-login">LOGIN</h1>
-	<form class="form-login">
+	<form class="form-login" action="fazer_login" method="POST">
 		<div class="form-group">
 			<label for="exampleInputEmail1">Usuário</label> <input type="text"
 				class="form-control" id="exampleInputEmail1"
-				aria-describedby="emailHelp" placeholder="Insira seu usuário">
+				aria-describedby="emailHelp" placeholder="Insira seu usuário" name="username">
 			<small id="emailHelp" class="form-text text-muted">Letras
 				maiúsculas dão diferença.</small> <label for="exampleInputPassword1">Senha</label>
 			<input type="password" class="form-control"
-				id="exampleInputPassword1" placeholder="Senha"> <input
+				id="exampleInputPassword1" placeholder="Senha"  name="senha"> <input
 				type="checkbox" class="form-check-input" id="exampleCheck1">
 			<label class="form-check-label" for="exampleCheck1">Lembrar-me</label>
 			<button type="submit" class="btn btn-success" id="button-login">Entrar</button>
-			<button type="submit" class="btn btn-success" id="button-apagar">Apagar</button>
 			<a class="esqueci-senha" href="redefinirSenha.jsp">Esqueci
 				minha senha</a>
 		</div>
