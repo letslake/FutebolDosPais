@@ -2,19 +2,45 @@ package br.usjt.ads.pi.model.entity;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
 
 @Entity
+@Table(name = "regulamento")
 public class Regulamento {
-
+	@Id
+	@Column(name = "id")
+	@NotNull
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	private int qtnTimes;
-	private int pontosVitoria;
-	private int ponstoEmpate;
-	private int tempoJogo;
-	private int tempoIntervalo;
-	private Date dataInicio;
-	private Date dataTermino;
+
+	@Column(name = "qtn_times")
+	@NotNull
+	private int qtn_times;
+	@Column(name = "pontos_vitoria")
+	@NotNull
+	private int pontos_vitoria;
+	@Column(name = "pontos_empate")
+	@NotNull
+	private int ponto_empates;
+
+	@Column(name = "tempo_jogo")
+	@NotNull
+	private int tempo_jogo;
+	@Column(name = "tempo_intervalo")
+	@NotNull
+	private int tempo_intervalo;
+	@Column(name = "data_inicio")
+	@NotNull
+	private Date data_inicio;
+	@Column(name = "data_termino")
+	@NotNull
+	private Date data_termino;
 
 	public Regulamento() {
 	}
@@ -22,13 +48,13 @@ public class Regulamento {
 	public Regulamento(int id, int qtnTimes, int pontosVitoria, int ponstoEmpate, int tempoJogo, int tempoIntervalo,
 			Date dataInicio, Date dataTermino) {
 		this.id = id;
-		this.qtnTimes = qtnTimes;
-		this.pontosVitoria = pontosVitoria;
-		this.ponstoEmpate = ponstoEmpate;
-		this.tempoJogo = tempoJogo;
-		this.tempoIntervalo = tempoIntervalo;
-		this.dataInicio = dataInicio;
-		this.dataTermino = dataTermino;
+		this.qtn_times = qtnTimes;
+		this.pontos_vitoria = pontosVitoria;
+		this.ponto_empates = ponstoEmpate;
+		this.tempo_jogo = tempoJogo;
+		this.tempo_intervalo = tempoIntervalo;
+		this.data_inicio = dataInicio;
+		this.data_termino = dataTermino;
 	}
 
 	public int getId() {
@@ -40,66 +66,66 @@ public class Regulamento {
 	}
 
 	public int getQtnTimes() {
-		return qtnTimes;
+		return qtn_times;
 	}
 
 	public void setQtnTimes(int qtnTimes) {
-		this.qtnTimes = qtnTimes;
+		this.qtn_times = qtnTimes;
 	}
 
 	public int getPontosVitoria() {
-		return pontosVitoria;
+		return pontos_vitoria;
 	}
 
 	public void setPontosVitoria(int pontosVitoria) {
-		this.pontosVitoria = pontosVitoria;
+		this.pontos_vitoria = pontosVitoria;
 	}
 
 	public int getPonstoEmpate() {
-		return ponstoEmpate;
+		return ponto_empates;
 	}
 
 	public void setPonstoEmpate(int ponstoEmpate) {
-		this.ponstoEmpate = ponstoEmpate;
+		this.ponto_empates = ponstoEmpate;
 	}
 
 	public int getTempoJogo() {
-		return tempoJogo;
+		return tempo_jogo;
 	}
 
 	public void setTempoJogo(int tempoJogo) {
-		this.tempoJogo = tempoJogo;
+		this.tempo_jogo = tempoJogo;
 	}
 
 	public int getTempoIntervalo() {
-		return tempoIntervalo;
+		return tempo_intervalo;
 	}
 
 	public void setTempoIntervalo(int tempoIntervalo) {
-		this.tempoIntervalo = tempoIntervalo;
+		this.tempo_intervalo = tempoIntervalo;
 	}
 
 	public Date getDataInicio() {
-		return dataInicio;
+		return data_inicio;
 	}
 
 	public void setDataInicio(Date dataInicio) {
-		this.dataInicio = dataInicio;
+		this.data_inicio = dataInicio;
 	}
 
 	public Date getDataTermino() {
-		return dataTermino;
+		return data_termino;
 	}
 
 	public void setDataTermino(Date dataTermino) {
-		this.dataTermino = dataTermino;
+		this.data_termino = dataTermino;
 	}
 
 	@Override
 	public String toString() {
-		return "Regulamento [id=" + id + ", qtnTimes=" + qtnTimes + ", pontosVitoria=" + pontosVitoria
-				+ ", ponstoEmpate=" + ponstoEmpate + ", tempoJogo=" + tempoJogo + ", tempoIntervalo=" + tempoIntervalo
-				+ ", dataInicio=" + dataInicio + ", dataTermino=" + dataTermino + "]";
+		return "Regulamento [id=" + id + ", qtnTimes=" + qtn_times + ", pontosVitoria=" + pontos_vitoria
+				+ ", ponstoEmpate=" + ponto_empates + ", tempoJogo=" + tempo_jogo + ", tempoIntervalo=" + tempo_intervalo
+				+ ", dataInicio=" + data_inicio + ", dataTermino=" + data_termino + "]";
 	}
 
 }

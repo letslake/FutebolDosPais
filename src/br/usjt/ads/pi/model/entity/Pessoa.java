@@ -4,7 +4,6 @@ import java.sql.Date;
 
 import javax.persistence.Entity;
 
-@Entity
 public class Pessoa {
 
 	private int id;

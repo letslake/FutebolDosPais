@@ -1,7 +1,9 @@
 package br.usjt.ads.pi.model.service;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
+
+import javax.transaction.Transactional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,11 +17,13 @@ public class CategoriaService {
 	@Autowired
 	private CategoriaDAO categoriaDAO;
 
+	@Transactional
 	public Categoria buscarCategoria(int id) throws IOException {
 		return categoriaDAO.buscarCategoria(id);
 	}
 
-	public ArrayList<Categoria> listarCategorias() throws IOException {
+	@Transactional
+	public List<Categoria> listarCategorias() throws IOException {
 		return categoriaDAO.listarCategorias();
 	}
 }

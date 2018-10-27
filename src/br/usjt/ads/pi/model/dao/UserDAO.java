@@ -30,12 +30,10 @@ public class UserDAO {
 
 	public int cadastrarUsuario(Usuario user) throws IOException {
 		int id = -1;
-		String sql = "insert into administrador (nome, username, email, senha) values (?,?,?,?)";
+		String sql = "insert into usuario (usuario, senha) values (?,?)";
 		try (PreparedStatement stm = conn.prepareStatement(sql)) {
-			stm.setString(1, user.getNome());
-			stm.setString(2, user.getUsername());
-			stm.setString(3, user.getEmail());
-			stm.setString(4, user.getSenha());
+			stm.setString(1, user.getUsuario());
+			stm.setString(2, user.getSenha());
 
 			stm.execute();
 
@@ -58,14 +56,12 @@ public class UserDAO {
 
 	public ArrayList<Usuario> listarUsuarios() throws IOException {
 		ArrayList<Usuario> lista = new ArrayList<>();
-		String sql = "select * from administrador";
+		String sql = "select * from usuario";
 		try (PreparedStatement stm = conn.prepareStatement(sql); ResultSet rs = stm.executeQuery()) {
 			while (rs.next()) {
 				Usuario user = new Usuario();
 				user.setId(rs.getInt("id"));
-				user.setNome(rs.getString("nome"));
-				user.setUsername(rs.getString("username"));
-				user.setEmail(rs.getString("email"));
+				user.setUsuario(rs.getString("usuario"));
 				user.setSenha(rs.getString("senha"));
 
 				lista.add(user);
@@ -79,7 +75,7 @@ public class UserDAO {
 
 	public Usuario buscarUsuario(String username) throws IOException {
 		Usuario user = null;
-		String sql = "select * from administrador where username like ?";
+		String sql = "select * from usuario where usuario like ?";
 
 		try (PreparedStatement stm = conn.prepareStatement(sql)) {
 			stm.setString(1, username);
@@ -89,9 +85,7 @@ public class UserDAO {
 					// Set Admin
 					user = new Usuario();
 					user.setId(rs.getInt("id"));
-					user.setEmail(rs.getString("email"));
-					user.setNome(rs.getString("nome"));
-					user.setUsername(rs.getString("username"));
+					user.setUsuario(rs.getString("usuario"));
 					user.setSenha(rs.getString("senha"));
 
 				}
@@ -104,14 +98,12 @@ public class UserDAO {
 	}
 
 	public void atualizarUsuario(Usuario user) throws IOException {
-		String sql = "update administrador set nome=?, username=?, email=?, senha=? where id = ?";
+		String sql = "update usuario set usuario=?, senha=? where id = ?";
 
 		try (PreparedStatement stm = conn.prepareStatement(sql)) {
-			stm.setString(1, user.getNome());
-			stm.setString(2, user.getUsername());
-			stm.setString(3, user.getEmail());
-			stm.setString(4, user.getSenha());
-			stm.setInt(5, user.getId());
+			stm.setString(1, user.getUsuario());
+			stm.setString(2, user.getSenha());
+			stm.setInt(3, user.getId());
 
 			stm.execute();
 

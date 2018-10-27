@@ -4,7 +4,6 @@ import java.sql.Date;
 
 import javax.persistence.Entity;
 
-@Entity
 public class Jogador extends Pessoa {
 	private int qtnAmarelos;
 	private int qtnVermelhos;

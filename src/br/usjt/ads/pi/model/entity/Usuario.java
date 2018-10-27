@@ -1,36 +1,40 @@
 package br.usjt.ads.pi.model.entity;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 
 @Entity
+@Table(name = "usuario")
 public class Usuario {
+	@Id
+	@Column(name = "id")
+	@NotNull
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
+	@Column(name="usuario")
 	@NotNull
 	@Size(min = 5, max = 50)
-	private String nome;
-	@NotNull
-	@Size(min = 5, max = 50)
-	private String email;
+	private String usuario;
+	@Column(name="senha")
 	@NotNull
 	@Size(min = 5, max = 50)
 	private String senha;
-	@NotNull
-	@Size(min = 5, max = 50)
-	private String username;
 
 	public Usuario() {
 
 	}
 
-	public Usuario(int id, String nome, String email, String senha, String username) {
+	public Usuario(int id, String usuario, String senha) {
 		this.id = id;
-		this.nome = nome;
-		this.email = email;
+		this.usuario = usuario;
 		this.senha = senha;
-		this.username = username;
 	}
 
 	public int getId() {
@@ -41,21 +45,14 @@ public class Usuario {
 		this.id = id;
 	}
 
-	public String getNome() {
-		return nome;
+	public String getUsuario() {
+		return usuario;
 	}
 
-	public void setNome(String nome) {
-		this.nome = nome;
+	public void setUsuario(String usuario) {
+		this.usuario = usuario;
 	}
 
-	public String getEmail() {
-		return email;
-	}
-
-	public void setEmail(String email) {
-		this.email = email;
-	}
 
 	public String getSenha() {
 		return senha;
@@ -65,18 +62,10 @@ public class Usuario {
 		this.senha = senha;
 	}
 
-	public String getUsername() {
-		return username;
-	}
-
-	public void setUsername(String username) {
-		this.username = username;
-	}
 
 	@Override
 	public String toString() {
-		return "Administrador [id=" + id + ", nome=" + nome + ", email=" + email + ", senha=" + senha + ", username="
-				+ username + "]";
+		return "Administrador [id=" + id + ", nome=" + usuario + ", senha=" + senha + "]";
 	}
 
 }

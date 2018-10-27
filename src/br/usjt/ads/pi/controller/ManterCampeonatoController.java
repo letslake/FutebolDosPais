@@ -1,7 +1,7 @@
 package br.usjt.ads.pi.controller;
 
 import java.io.IOException;
-import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -11,13 +11,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import br.usjt.ads.pi.model.entity.Usuario;
 import br.usjt.ads.pi.model.entity.Campeonato;
 import br.usjt.ads.pi.model.entity.Categoria;
-import br.usjt.ads.pi.model.service.UserService;
+import br.usjt.ads.pi.model.entity.Usuario;
 import br.usjt.ads.pi.model.service.CampeonatoService;
 import br.usjt.ads.pi.model.service.CategoriaService;
 import br.usjt.ads.pi.model.service.RegulamentoService;
+import br.usjt.ads.pi.model.service.UserService;
 
 @Controller
 public class ManterCampeonatoController {
@@ -102,7 +102,7 @@ public class ManterCampeonatoController {
 	@RequestMapping("/campeonatos")
 	public String campeonatos(HttpSession session) {
 		try {
-			ArrayList<Campeonato> lista = campeonatoService.listarCampeonatos();
+			List<Campeonato> lista = campeonatoService.listarCampeonatos();
 			session.setAttribute("campeonatos", lista);
 			return "Campeonatos";
 		} catch (IOException e) {
