@@ -9,7 +9,7 @@
 
 	<div class="jumbotron">
 		<div class="container">
-			<h1 class="display-3">Futebol dos Pais do colégio arquidiocesano</h1>
+			<h1 class="display-3">Futebol dos Pais do Colégio Arquidiocesano</h1>
 			<p class="p-informacao">Para marcar o 25º aniversário do
 				Campeonato de Futebol dos Pais e Funcionários, realizado pelos
 				ex-alunos do Colégio Marista Arquidiocesano, o Laboratório Transmid
@@ -18,12 +18,44 @@
 				torneio nestes anos. O resultado foi um trabalho audiovisual
 				dividido em depoimentos relatados pelos ex-alunos do colégio.
 				Acompanhe!</p>
-			<p>
-				<a class="btn btn-success btn-lg" href="#" role="button">Saiba
-					mais »</a>
 			</p>
 		</div>
 	</div>
+	<hr>
+	<h1 class="h1-carrossel">Fotos do campeonato 2017</h1>
+	<div id="carouselExampleIndicators" class="carousel slide"
+		data-ride="carousel">
+		<ol class="carousel-indicators">
+			<li data-target="#carouselExampleIndicators" data-slide-to="0"
+				class="active"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+			<li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+		</ol>
+		<div class="carousel-inner">
+			<div class="carousel-item active">
+				<img class="d-block w-100" src="imagens/FOTO.jpg" alt="First slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100"
+					src="imagens/depositphotos_12339251-stockafbeelding-kinderen-spelen-voetbal.jpg"
+					alt="Second slide">
+			</div>
+			<div class="carousel-item">
+				<img class="d-block w-100" src="imagens/pratica-exercicc81cios.jpg"
+					alt="Third slide">
+			</div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleIndicators"
+			role="button" data-slide="prev"> <span
+			class="carousel-control-prev-icon" aria-hidden="true"></span> <span
+			class="sr-only">Previous</span>
+		</a> <a class="carousel-control-next" href="#carouselExampleIndicators"
+			role="button" data-slide="next"> <span
+			class="carousel-control-next-icon" aria-hidden="true"></span> <span
+			class="sr-only">Next</span>
+		</a>
+	</div>
+	<hr>
 	<div class="container mb-5">
 		<!-- Example row of columns -->
 		<div class="row">
@@ -38,16 +70,13 @@
 					<li>Dar o bom exemplo aos jovens e às crianças.</li>
 					</p>
 				</ul>
-				<p>
-					<a class="btn btn-success" href="#" role="button">Ver detalhes
-						»</a>
-				</p>
 			</div>
 			<div class="col-md-4">
 				<h2>Quem pode participar?</h2>
 				<ul class="itens"></ul>
 				<p>Poderão participar do Campeonato aqueles Atletas que se
-					enquadrarem num dos seguintes itens:
+					enquadrarem num dos seguintes itens:</p>
+
 				<li>Ser pai de aluno regularmente matriculado no Colégio,
 					estando este em dia com as suas obrigações contratuais e
 					financeiras junto ao Colégio e a Associação Futebol de Pais;</li>
@@ -59,11 +88,7 @@
 				<li>Ter idade mínima de 32 (trinta e dois) anos, a fim de que
 					sejam mantidos o equilíbrio e a competitividade do Campeonato, não
 					sendo permitida qualquer exceção para essa condição</li>
-				</p>
-				<p>
-					<a class="btn btn-success" href="#" role="button">Ver detalhes
-						»</a>
-				</p>
+
 			</div>
 			<div class="col-md-4">
 				<h2>Inscrições</h2>
@@ -73,10 +98,8 @@
 					site; Para participar do Campeonato, o atleta deverá concordar com
 					o pagamento das taxas do Colégio, nas datas dos respectivos
 					vencimentos;</p>
-				<p>
-					<a class="btn btn-success" href="#" role="button">Ver detalhes
-						»</a>
-				</p>
 			</div>
 		</div>
-		<c:import url="footer.jsp" />
+
+	</div>
+	<c:import url="footer.jsp" />

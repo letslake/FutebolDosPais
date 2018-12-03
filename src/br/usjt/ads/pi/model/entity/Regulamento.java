@@ -8,7 +8,13 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
+
+import org.springframework.format.annotation.DateTimeFormat;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 @Entity
 @Table(name = "regulamento")
@@ -35,9 +41,17 @@ public class Regulamento {
 	@Column(name = "tempo_intervalo")
 	@NotNull
 	private int tempo_intervalo;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", locale = "pt-BR", timezone = "Brazil/East")
+	@Temporal(TemporalType.DATE)
 	@Column(name = "data_inicio")
 	@NotNull
 	private Date data_inicio;
+	
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", locale = "pt-BR", timezone = "Brazil/East")
+	@Temporal(TemporalType.DATE)
 	@Column(name = "data_termino")
 	@NotNull
 	private Date data_termino;
@@ -45,12 +59,12 @@ public class Regulamento {
 	public Regulamento() {
 	}
 
-	public Regulamento(int id, int qtnTimes, int pontosVitoria, int ponstoEmpate, int tempoJogo, int tempoIntervalo,
+	public Regulamento(int id, int qtnTimes, int pontosVitoria, int pontosEmpate, int tempoJogo, int tempoIntervalo,
 			Date dataInicio, Date dataTermino) {
 		this.id = id;
 		this.qtn_times = qtnTimes;
 		this.pontos_vitoria = pontosVitoria;
-		this.ponto_empates = ponstoEmpate;
+		this.ponto_empates = pontosEmpate;
 		this.tempo_jogo = tempoJogo;
 		this.tempo_intervalo = tempoIntervalo;
 		this.data_inicio = dataInicio;
@@ -81,12 +95,12 @@ public class Regulamento {
 		this.pontos_vitoria = pontosVitoria;
 	}
 
-	public int getPonstoEmpate() {
+	public int getPontosEmpate() {
 		return ponto_empates;
 	}
 
-	public void setPonstoEmpate(int ponstoEmpate) {
-		this.ponto_empates = ponstoEmpate;
+	public void setPontosEmpate(int pontosEmpate) {
+		this.ponto_empates = pontosEmpate;
 	}
 
 	public int getTempoJogo() {
@@ -124,8 +138,8 @@ public class Regulamento {
 	@Override
 	public String toString() {
 		return "Regulamento [id=" + id + ", qtnTimes=" + qtn_times + ", pontosVitoria=" + pontos_vitoria
-				+ ", ponstoEmpate=" + ponto_empates + ", tempoJogo=" + tempo_jogo + ", tempoIntervalo=" + tempo_intervalo
-				+ ", dataInicio=" + data_inicio + ", dataTermino=" + data_termino + "]";
+				+ ", ponstoEmpate=" + ponto_empates + ", tempoJogo=" + tempo_jogo + ", tempoIntervalo="
+				+ tempo_intervalo + ", dataInicio=" + data_inicio + ", dataTermino=" + data_termino + "]";
 	}
 
 }

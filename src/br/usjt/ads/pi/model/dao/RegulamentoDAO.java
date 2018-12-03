@@ -21,7 +21,7 @@ public class RegulamentoDAO {
 	EntityManager manager;
 
 	public int cadastrarRegulamento(Campeonato campeonato) throws IOException {
-		manager.persist(campeonato);
-		return campeonato.getId();
+		manager.persist(campeonato.getRegulamento());
+		return campeonato.getRegulamento().getId();
 	}
 }

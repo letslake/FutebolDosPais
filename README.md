@@ -1,4 +1,3 @@
-
 # Sistema Futebol dos Pais
 
 ## Descrição
@@ -11,5 +10,5 @@
 > **Curso:** Análise e Desenvolvimento de Sistemas 
 > **Turma:** ADS2BN-MCA2
 > - Arthur Grigoletto Navarro de Lima  - RA: 817121874
-> - Leticia Gomes  - RA: 81723214
-> - Thainara Araujo Bortoleto - RA: 
+> - Leticia Gomes  - RA: 817120762
+> - Thainara Araujo Bortoleto - RA: 817122300
